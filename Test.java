@@ -1,14 +1,13 @@
-package programowanie.Test;
+package programowanie.test;
 
 import java.util.Scanner;
 
 public class Test {
 
-    public int sqr(int hours, Scanner scanner){
+    public int sqr(int hours) {
         if (hours < 0) {
             throw new IllegalArgumentException("Number must be bigger than 0");
         }
-
         return hours * 60 * 60;
     }
 
@@ -22,10 +21,10 @@ public class Test {
         hours = scanner.nextInt();
 
         try {
-            seconds = thing.sqr(hours, scanner);
-        }
-        catch (IllegalArgumentException exception){
-            seconds = thing.sqr(hours * -1, scanner);
+            seconds = thing.sqr(hours);
+        } catch (IllegalArgumentException exception) {
+            System.out.println("You must type positive number, so I just killed your minus :)");
+            seconds = thing.sqr(hours * -1);
         }
         System.out.println(seconds + " seconds");
     }
